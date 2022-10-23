@@ -620,3 +620,9 @@ body {
   cursor: pointer;
   z-index: 225;
 }
+
+@media (max-width: 767px) {
+  .popup-box img {
+    width: 330px;
+  }
+}
