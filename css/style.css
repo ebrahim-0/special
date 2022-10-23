@@ -623,6 +623,6 @@ body {
 
 @media (max-width: 767px) {
   .popup-box img {
-    width: 330px;
+    width: 250px;
   }
 }
