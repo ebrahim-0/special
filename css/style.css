@@ -626,3 +626,149 @@ body {
     width: 250px;
   }
 }
+.testimonials {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.testimonials::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: var(--main-color);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.testimonials::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.testimonials .container h3 {
+  color: white;
+  font-size: 30px;
+}
+
+.testimonials .content {
+  display: flex;
+  gap: 10px;
+}
+
+.testimonials .content .box {
+  background-color: white;
+  padding: 10px;
+}
+
+.testimonials .content .box p {
+  color: #706f6f;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .testimonials .content {
+    flex-direction: column;
+  }
+  .testimonials {
+    text-align: center;
+  }
+}
+
+.contact {
+  background-image: url(../img/contact.png);
+  background-size: cover;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-height: 600px;
+  position: relative;
+}
+
+.contact h3 {
+  font-size: 30px;
+  width: fit-content;
+  margin: 50px auto;
+  color: var(--main-color);
+}
+.contact form {
+  display: flex;
+  gap: 2%;
+  overflow: hidden;
+  max-width: 800px;
+  margin: auto;
+}
+
+.contact form .left {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+
+.contact .left input:not([type="submit"]),
+.contact .right textarea {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  background-color: rgb(255 255 255 / 50%);
+}
+
+.contact .left input:not([type="submit"]):focus,
+.contact .right textarea:focus {
+  outline: 1px solid var(--main-color);
+}
+
+.contact .left input:not([type="submit"]):focus::placeholder,
+.contact .right textarea:focus::placeholder {
+  opacity: 0;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.contact form .right {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+
+.contact .right textarea {
+  height: 150px;
+}
+
+.contact .right input[type="submit"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: white;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .contact form {
+    flex-direction: column;
+  }
+  .contact form .right,
+  .contact form .left {
+    width: 100%;
+  }
+}
+
+.footer {
+  color: #eee;
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+}
