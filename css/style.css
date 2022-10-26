@@ -844,7 +844,7 @@ html {
 @media (max-width: 991px) {
   .header .nav-bar li {
     display: block;
-    margin: 3px;
+    margin: 5px;
   }
   .header .nav-bar {
     display: none;
