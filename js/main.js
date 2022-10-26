@@ -49,16 +49,12 @@ if (localStorage.getItem("background_options")) {
   }
 }
 
-// Setting Spin
-
 let gear = document.querySelector(".gear");
 gear.onclick = function () {
   gear.classList.toggle("fa-spin");
 
   document.querySelector(".settings-box").classList.toggle("open");
 };
-
-// Switch Colors
 
 if (localStorage.getItem("color_option")) {
   document.documentElement.style.setProperty(
@@ -81,11 +77,7 @@ colorsLi.forEach((li) => {
     );
     localStorage.setItem("color_option", e.target.dataset.color);
 
-    e.target.parentElement.querySelectorAll(".active").forEach((element) => {
-      element.classList.remove("active");
-    });
-
-    e.target.classList.add("active");
+    handle(e);
   });
 });
 
@@ -93,11 +85,7 @@ let randomBack = document.querySelectorAll(".background span");
 
 randomBack.forEach((span) => {
   span.addEventListener("click", (e) => {
-    e.target.parentElement.querySelectorAll(".active").forEach((element) => {
-      element.classList.remove("active");
-    });
-
-    e.target.classList.add("active");
+    handle(e);
   });
 });
 
@@ -163,3 +151,56 @@ imgsBox.forEach((img) => {
     });
   };
 });
+
+let bullets = document.querySelectorAll(".bullets");
+
+bullets.forEach((bullet) => {
+  bullet.addEventListener("click", (e) => {
+    document.querySelector(e.target.dataset.section).scrollIntoView();
+  });
+});
+
+let bulletsSpan = document.querySelectorAll(".bullets-option span");
+
+let bulletsContainer = document.querySelectorAll(".nav-bullets");
+
+let bulletsLocal = localStorage.getItem("bullets_option");
+
+if (bulletsLocal !== null) {
+  bulletsSpan.forEach((span) => {
+    span.classList.remove("active");
+    bulletsContainer[0].style.display = bulletsLocal;
+    if (bulletsLocal === "block") {
+      document.querySelector(".bullets-option .yes").classList.add("active");
+    } else {
+      document.querySelector(".bullets-option .no").classList.add("active");
+    }
+  });
+}
+bulletsSpan.forEach((span) => {
+  span.addEventListener("click", (e) => {
+    if (e.target.dataset.display === "show") {
+      bulletsContainer[0].style.display = "block";
+      localStorage.setItem("bullets_option", "block");
+    } else {
+      bulletsContainer[0].style.display = "none";
+      localStorage.setItem("bullets_option", "none");
+    }
+    handle(e);
+  });
+});
+
+function handle(ev) {
+  ev.target.parentElement.querySelectorAll(".active").forEach((element) => {
+    element.classList.remove("active");
+  });
+  ev.target.classList.add("active");
+}
+
+let menuBar = document.querySelector(".menu-bar");
+
+let navBar = document.querySelector(".header .nav-bar");
+
+menuBar.onclick = () => {
+  navBar.classList.toggle("open");
+};

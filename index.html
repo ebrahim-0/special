@@ -41,8 +41,8 @@
         <div class="option-box">
           <h3>Show Bullets</h3>
           <div class="bullets-option">
-            <span class="active">Yes</span>
-            <span>No</span>
+            <span class="yes active" data-display="show">Yes</span>
+            <span class="no" data-display="hide">No</span>
           </div>
         </div>
         <div class="reset-options">
@@ -50,13 +50,34 @@
         </div>
       </div>
     </div>
+    <div class="nav-bullets">
+      <div class="bullets" data-section=".about">
+        <div class="section">About Us</div>
+      </div>
+      <div class="bullets" data-section=".skills">
+        <div class="section">Our Skills</div>
+      </div>
+      <div class="bullets" data-section=".gallery">
+        <div class="section">Gallery</div>
+      </div>
+      <div class="bullets" data-section=".timeline">
+        <div class="section">Timeline</div>
+      </div>
+      <div class="bullets" data-section=".features">
+        <div class="section">Features</div>
+      </div>
+      <div class="bullets" data-section=".testimonials">
+        <div class="section">Testimonials</div>
+      </div>
+    </div>
     <div class="landing-page">
       <div class="overlay"></div>
       <div class="container">
         <div class="header">
           <div class="logo">Special Design</div>
-          <ul>
-            <li><a href="#about" class="active">About</a></li>
+          <i class="fa-solid fa-bars menu-bar"></i>
+          <ul class="nav-bar">
+            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#timeline">Timeline</a></li>
