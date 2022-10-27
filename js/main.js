@@ -162,14 +162,14 @@ bullets.forEach((bullet) => {
 
 let bulletsSpan = document.querySelectorAll(".bullets-option span");
 
-let bulletsContainer = document.querySelectorAll(".nav-bullets");
+let bulletsContainer = document.querySelector(".nav-bullets");
 
 let bulletsLocal = localStorage.getItem("bullets_option");
 
 if (bulletsLocal !== null) {
   bulletsSpan.forEach((span) => {
     span.classList.remove("active");
-    bulletsContainer[0].style.display = bulletsLocal;
+    bulletsContainer.style.display = bulletsLocal;
     if (bulletsLocal === "block") {
       document.querySelector(".bullets-option .yes").classList.add("active");
     } else {
@@ -180,10 +180,10 @@ if (bulletsLocal !== null) {
 bulletsSpan.forEach((span) => {
   span.addEventListener("click", (e) => {
     if (e.target.dataset.display === "show") {
-      bulletsContainer[0].style.display = "block";
+      bulletsContainer.style.display = "block";
       localStorage.setItem("bullets_option", "block");
     } else {
-      bulletsContainer[0].style.display = "none";
+      bulletsContainer.style.display = "none";
       localStorage.setItem("bullets_option", "none");
     }
     handle(e);
